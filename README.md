@@ -35,9 +35,9 @@ WHERE autores.name='jose';
 ```
 Obtener todos los libros de un autor específico
 ```sql
-SELECT nombre
-FROM libro, autores
-WHERE autores.name='jose';
+SELECT libro.isbn, libro.nombre
+FROM libro,autores_libro, autores
+WHERE libro.id_autores_libro=autores_libro.id AND autores_libro.id_autores=autores.id AND autores.id='pablo';
 ```
 Listar todas las ediciones de un libro
 ```sql
