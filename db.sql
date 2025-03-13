@@ -89,8 +89,10 @@ CREATE TABLE IF NOT EXISTS libro(
     id_biblioteca INT,
     id_det_pres_dev INT,
     id_autores_libro INT,
+    id_edicion_libro INT,
     CONSTRAINT gen_libro_fk FOREIGN KEY (id_gen_libro) REFERENCES gen_libro(id),
     CONSTRAINT biblio_libro_fk FOREIGN KEY (id_biblioteca) REFERENCES biblioteca(id),
     CONSTRAINT autor_libro_fk FOREIGN KEY (id_autores_libro) REFERENCES autores_libro(id),
-    CONSTRAINT detmov_libro_fk FOREIGN KEY (id_det_pres_dev) REFERENCES det_prev_dev(id)
+    CONSTRAINT detmov_libro_fk FOREIGN KEY (id_det_pres_dev) REFERENCES det_prev_dev(id),
+    CONSTRAINT edicion_libro_fk FOREIGN KEY (id_edicion_libro) REFERENCES edicion_libro(id)
 );
